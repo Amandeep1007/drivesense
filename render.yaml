@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: drivesense-api
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    healthCheckPath: /api/health
+    envVars:
+      - key: DRIVESENSE_CORS_ORIGINS
+        sync: false
